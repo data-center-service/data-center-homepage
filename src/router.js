@@ -10,8 +10,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'api',
-      component: Api
+      redirect: '/apis'
     },
     {
       path: '/apis',
