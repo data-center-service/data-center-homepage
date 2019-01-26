@@ -21,10 +21,10 @@ export default {
     },
     async getApis() {
       const { data: apis } = await this.axios.get(
-        "http://47.101.132.189:8080/apis"
+        "http://api.data-center-service.top:8080"
       );
       this.tableData = apis.map(api => {
-        api.apiRootRoute = `http://47.101.132.189:8080/apis/${
+        api.apiRootRoute = `http://api.data-center-service.top:8080/${
           api.apiRootRoute
         }`;
         api.docRoute = `${api.apiRootRoute}/${api.docRoute}`;
