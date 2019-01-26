@@ -4,6 +4,8 @@ COPY package.json .
 COPY package-lock.json .
 COPY src src/
 COPY web.conf .
+COPY .eslintrc.js .
+COPY .editorconfig .
 RUN npm install
 RUN npm run build
 
