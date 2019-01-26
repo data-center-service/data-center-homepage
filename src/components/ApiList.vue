@@ -21,7 +21,7 @@ export default {
     },
     async getApis() {
       const { data: apis } = await this.axios.get(
-        "http://api.data-center-service.top:8080"
+        "http://api.data-center-service.top:8080/apis"
       );
       this.tableData = apis.map(api => {
         api.apiRootRoute = `http://api.data-center-service.top:8080/${
