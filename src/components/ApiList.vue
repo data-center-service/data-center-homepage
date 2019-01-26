@@ -4,7 +4,7 @@
     <el-table-column prop="apiRootRoute" label="API接口地址" width="360"></el-table-column>
     <el-table-column prop="docRoute" label="文档地址">
       <template slot-scope="scope">
-        <el-button size="mini" @click="handleViewDoc(scope.$index, scope.row)">访问</el-button>
+        <el-button size="mini" @click="handleViewDoc(scope.row)">访问</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -16,8 +16,8 @@ export default {
     await this.getApis();
   },
   methods: {
-    handleViewDoc(a,b){
-console.log(a,b)
+    handleViewDoc(api) {
+      window.open(api.docRoute);
     },
     async getApis() {
       const { data: apis } = await this.axios.get(
