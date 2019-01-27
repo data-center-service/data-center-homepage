@@ -12,30 +12,30 @@
 
 <script>
 export default {
-  async mounted() {
-    await this.getApis();
+  async mounted () {
+    await this.getApis()
   },
   methods: {
-    handleViewDoc(api) {
-      window.open(api.docRoute);
+    handleViewDoc (api) {
+      window.open(api.docRoute)
     },
-    async getApis() {
+    async getApis () {
       const { data: apis } = await this.axios.get(
-        "http://api.data-center-service.top:8080/apis"
-      );
+        'http://api.data-center-service.top:8080/apis'
+      )
       this.tableData = apis.map(api => {
         api.apiRootRoute = `http://api.data-center-service.top:8080/${
           api.apiRootRoute
-        }`;
-        api.docRoute = `${api.apiRootRoute}/${api.docRoute}`;
-        return api;
-      });
+        }`
+        api.docRoute = `${api.apiRootRoute}/${api.docRoute}`
+        return api
+      })
     }
   },
-  data() {
+  data () {
     return {
       tableData: []
-    };
+    }
   }
-};
+}
 </script>
