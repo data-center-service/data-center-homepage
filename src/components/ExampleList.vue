@@ -31,7 +31,7 @@ export default {
         {
           name: '区域商家类型分布',
           url:
-            'http://web.data-center-service.top:8080/#/business/shop_falvors',
+            'http://web.data-center-service.top:8081/#/business/shop_falvors',
           githubUrl: 'https://github.com/data-center-service/data-center-web'
         }
       ]
